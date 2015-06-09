@@ -1,0 +1,4 @@
+#ignore binary artifacts
+bin/*
+lib/*
+printf_test
