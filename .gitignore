@@ -7,6 +7,6 @@ printf_test
 
 #Autotools crud
 *Makefile.in
-*.deps/*
+src/.deps
 autom4te.*
 aclocal.m4
