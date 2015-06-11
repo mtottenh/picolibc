@@ -1,6 +1,12 @@
 #ignore binary artifacts
+
 bin/*
 lib/*
 obj/*
 printf_test
+
+#Autotools crud
 *Makefile.in
+*.deps/*
+autom4te.*
+aclocal.m4

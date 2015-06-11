@@ -1,0 +1,18 @@
+
+To create the library:
+====================
+mkdir build
+cd build && ../configure
+make
+
+Run tests
+=========
+make test
+
+
+install libplibc
+================
+make install
+
+
+
