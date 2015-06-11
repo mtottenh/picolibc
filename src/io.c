@@ -7,7 +7,7 @@ static int _vsnprintf_real(char*, size_t, const char*, fmtstr_args_t*);
 
 static int 
 _vsnprintf_real(char* s, size_t n, const char* fmt, fmtstr_args_t* arg) {
-
+    return 0;
 }
 
 
@@ -30,22 +30,22 @@ int _printf(const char* fmt, ...) {
 }
 
 int _sprintf(char* s, const char* fmt, ...) {
-
+    return 0;
 }
 
 int _snprintf(char *s, size_t n, const char* fmt, ...) {
-
+    return 0;
 }
 
 int _vprintf(const char* fmt, va_list vargl) {
-
+    return 0;
 }
 
 int _vsprintf(char* s, const char* fmt, va_list vargl) {
-
+    return 0;
 }
 
 int _vsnprintf(char* s, size_t n, const char* fmt, va_list vargl) {
-
+    return 0;
 }
 

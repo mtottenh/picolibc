@@ -1,7 +1,7 @@
 #include <types.h>
 #include <mem.h>
 #include <syscall.h>
-#include <bits/syscall.h>
+#include "syscall_int.h"
 void* global_base = NULL;
 
 
@@ -9,10 +9,13 @@ static int brk(void*);
 static void* sbrk(size_t);
 
 static int brk(void* end) {
-    return -(__syscall(SYS_brk, end) != (unsigned long long) end);
+    return -(syscall(SYS_brk, end) != (unsigned long long) end);
 }
 static void* sbrk(size_t len) {
-    return 0;
+    unsigned long cur = brk((void*)0);
+    if (len && brk((void*)cur+len) != cur+len)
+        return (void*)-1;
+    return (void*)cur;
 }
 
 void _memmove(void* dest, const void* src, size_t len) {

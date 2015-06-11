@@ -1,5 +1,5 @@
 AC_INIT(picolibc,1.0,mtottenh@gmail.com)
-
+#PKG_CHECK_MODULES([CHECK], [check >= 0.9.10])
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_SRCDIR(src/io.c)
 
