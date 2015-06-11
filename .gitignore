@@ -1,5 +1,5 @@
 #ignore binary artifacts
-
+*.swp
 bin/*
 lib/*
 obj/*
