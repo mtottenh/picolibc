@@ -2,6 +2,7 @@
 #include <string.h>
 #include <mem.h>
 #include <types.h>
+#include <io.h>
 #define TPM_DIGEST_SIZE 20
 #define BUFSIZE sizeof(long long)*2 + 2
 
@@ -12,9 +13,9 @@ static char sbuff[TPM_DIGEST_SIZE+1] = {   0xf3, 0x63, 0x74, 0x4e, 0x28, 0x9d,
 
 void print_as_bytes(const char* const buff) {
     for (int i = 0; i < TPM_DIGEST_SIZE; i++) {
-        printf("%hhX ",buff[i]);
+        _printf("%hhX ",buff[i]);
     }
-    printf("\n");
+    _printf("\n");
 }
 
 static inline char* lltoa_shr(unsigned long long d) {
@@ -52,10 +53,10 @@ static inline char* lltoa_div(unsigned long long d) {
 }
 
 int main() {
-    printf("sbuff as a string: %s\n", sbuff);
-    printf("sbuff as bytes: ");
+    _printf("sbuff as a string: %s\n", sbuff);
+    _printf("sbuff as bytes: ");
     print_as_bytes(sbuff);
-    printf("0xa SHR: %s\n", lltoa_shr(0xa));
-    printf("0xa DIV: %s\n", lltoa_div(0xa));
+    _printf("0xa SHR: %s\n", lltoa_shr(0xa));
+    _printf("0xa DIV: %s\n", lltoa_div(0xa));
     return 0;
 }

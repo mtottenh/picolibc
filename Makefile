@@ -2,7 +2,7 @@
 AR=ar
 CC=gcc
 #FLAGS
-CFLAGS=-std=c99
+CFLAGS=-std=c99 -O0 -Wall
 
 #DIRS
 INC_DIRS=./include
@@ -26,7 +26,7 @@ TEST_OUT=$(patsubst %.c, %_test, $(TEST))
 all: $(LIBDIR)/$(LIB_A) $(BINDIR)/$(TEST_OUT)
 
 $(BINDIR)/$(TEST_OUT): $(TESTDIR)/$(TEST) 
-	$(CC) $(CFLAGS) -I $(INC_DIRS) -L $(LIBDIR) -o $(BINDIR)/$@ $^ -l$(LIB)
+	$(CC) $(CFLAGS) -nostdlib src/asm/start.S -I $(INC_DIRS) -L $(LIBDIR) -o $(BINDIR)/$@ $^ -l$(LIB)
 
 $(LIBDIR)/$(LIB_A): $(OBJ:%=obj/%)
 	$(AR) rcs $@ $^

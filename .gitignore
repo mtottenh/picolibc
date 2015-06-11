@@ -1,4 +1,5 @@
 #ignore binary artifacts
 bin/*
 lib/*
+obj/*
 printf_test
