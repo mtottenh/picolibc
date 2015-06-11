@@ -20,6 +20,8 @@ void print_as_bytes(const char* const buff) {
 
 static inline char* lltoa_shr(unsigned long long d) {
     char* buff = _malloc(BUFSIZE+1);
+    if (!buff)
+        return NULL;
     buff[BUFSIZE] = 0;
     buff[0] = '0';
     buff[1] = 'x';
@@ -37,6 +39,8 @@ static inline char* lltoa_shr(unsigned long long d) {
 
 static inline char* lltoa_div(unsigned long long d) {
     char* buff = _malloc(BUFSIZE+1);
+    if(!buff)
+        return NULL;
     buff[BUFSIZE] = 0;
     buff[0] = '0';
     buff[1] = 'x';
