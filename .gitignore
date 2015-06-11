@@ -3,3 +3,4 @@ bin/*
 lib/*
 obj/*
 printf_test
+*Makefile.in
