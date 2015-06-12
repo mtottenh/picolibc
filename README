@@ -1,3 +1,16 @@
+ABOUT
+=====
+
+plibc (p for pico) is a small 'replacement' for a traditional C standard
+library such as glibc.
+
+It's main goal is to be educational and expose the various challenges involved
+in creating a glibc replacement. As such it's designed to be easy to read, not
+nessecarily performant (or strictly compliant). In no way is it a full
+replacement for a traditional library like glibc/ulibc. Indeed many of the
+expected features for a C library will probably go un-implemented.
+
+
 
 To create the library:
 ====================
@@ -7,12 +20,20 @@ make
 
 Run tests
 =========
-make test
+make check
 
 
-install libplibc
+install plibc
 ================
 make install
 
+Using plibc 
+===========
 
+To actualy use plibc in your programs you need to link with the following:
+
+gcc -nostdlib -o foo start.S foo.c -lplibc 
+
+start.S must be used to call main() within your program, and is generally
+platform specific, an example can be found at src/asm/start.S
 
